@@ -39,4 +39,4 @@ CSV.foreach(movie_file_path, option) do |row|
 end
 
 Movie.create!(movie_list)
-puts  'テキストモデルの初期データインポートに成功しました。'
+puts  'ムービーモデルの初期データインポートに成功しました。'
