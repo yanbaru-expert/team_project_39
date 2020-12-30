@@ -1,5 +1,5 @@
 require 'csv'
-items_name = {headers: true}
+header_option = {headers: true}
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 
@@ -19,7 +19,7 @@ Text.destroy_all
 text_file_path = 'db/csv_data/text_data.csv'
 text_list = []
 
-CSV.foreach(text_file_path, items_name) do |row|
+CSV.foreach(text_file_path, header_option) do |row|
   text_list << row.to_h
 end
 
@@ -33,7 +33,7 @@ Movie.destroy_all
 movie_file_path = 'db/csv_data/movie_data.csv'
 movie_list = []
 
-CSV.foreach(movie_file_path, items_name) do |row|
+CSV.foreach(movie_file_path, header_option) do |row|
   movie_list << row.to_h
 end
 
