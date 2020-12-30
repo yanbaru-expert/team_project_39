@@ -25,3 +25,18 @@ end
 
 Text.create!(text_list)
 puts  'テキストモデルの初期データインポートに成功しました。'
+
+# ムービーモデルのデータをインポート（初期化）
+Movie.destroy_all
+
+# ファイルパス取得
+movie_file_path = 'db/csv_data/movie_data.csv'
+option = {headers: true}
+movie_list = []
+
+CSV.foreach(movie_file_path, option) do |row|
+  movie_list << row.to_h
+end
+
+Movie.create!(movie_list)
+puts  'テキストモデルの初期データインポートに成功しました。'
