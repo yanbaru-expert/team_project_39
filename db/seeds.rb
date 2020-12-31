@@ -12,6 +12,16 @@ User.find_or_create_by!(email: EMAIL) do |user|
   puts 'ユーザーの初期データインポートに成功しました。'
 end
 
+EMAIL = 'admin@example.com'
+PASSWORD = 'password'
+PASSWORD_CONFIRMATION = 'password'
+
+#管理者が存在しない時だけ新規作成 
+AdminUser.find_or_create_by!(email: EMAIL) do |user|
+   user.password = PASSWORD
+   user.password = PASSWORD_CONFIRMATION
+   puts '管理者の初期データインポートに成功しました。'
+
 # テキストモデルのデータをインポート
 Text.destroy_all
 
@@ -39,4 +49,3 @@ end
 
 Movie.create!(movie_list)
 puts  'ムービーモデルの初期データインポートに成功しました。'
-AdminUser.find_or_create_by!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
