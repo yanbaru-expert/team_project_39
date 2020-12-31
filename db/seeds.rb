@@ -39,3 +39,4 @@ end
 
 Movie.create!(movie_list)
 puts  'ムービーモデルの初期データインポートに成功しました。'
+AdminUser.find_or_create_by!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
