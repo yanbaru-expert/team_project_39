@@ -12,15 +12,13 @@ User.find_or_create_by!(email: EMAIL) do |user|
   puts 'ユーザーの初期データインポートに成功しました。'
 end
 
-EMAIL = 'admin@example.com'
-PASSWORD = 'password'
-PASSWORD_CONFIRMATION = 'password'
+ADMIN_EMAIL = 'admin@example.com'
 
 #管理者が存在しない時だけ新規作成 
-AdminUser.find_or_create_by!(email: EMAIL) do |user|
-   user.password = PASSWORD
-   user.password = PASSWORD_CONFIRMATION
+AdminUser.find_or_create_by!(email: ADMIN_EMAIL) do |admin_user|
+   admin_user.password = PASSWORD
    puts '管理者の初期データインポートに成功しました。'
+end
 
 # テキストモデルのデータをインポート
 Text.destroy_all
