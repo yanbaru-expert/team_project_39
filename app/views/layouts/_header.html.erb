@@ -10,7 +10,7 @@
           Rails
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <%= link_to "Ruby/Rails教材", "#", class: "dropdown-item" %>
+          <%= link_to "Ruby/Rails教材", root_path, class: "dropdown-item" %>
           <%= link_to "動画教材", "#", class: "dropdown-item" %>
           <%= link_to "AWS講座", "#", class: "dropdown-item" %>
           <%= link_to "プログラミング勉強会", "#", class: "dropdown-item" %>
@@ -23,18 +23,18 @@
           PHP
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <%= link_to "PHPテキスト教材", "#", class: "dropdown-item" %>
+          <%= link_to "PHPテキスト教材", root_path, class: "dropdown-item" %>
           <%= link_to "PHP動画教材", "#", class: "dropdown-item" %>
         </div>
       </li>
-      <li class="nav-link">
-        <%= link_to "マネタイズ講座", "#" %>
+      <li class="nav-item">
+        <%= link_to "マネタイズ講座", "#", class: "nav-link" %>
       </li>
-      <li class="nav-link">
-        <%= link_to 'マネタイズ講座', "#" %>
+      <li class="nav-item">
+        <%= link_to 'マネタイズ講座', "#", class: "nav-link" %>
       </li>
-      <li class="nav-link">
-        <%= link_to 'LINE', "#" %>
+      <li class="nav-item">
+        <%= link_to 'LINE', "#", class: "nav-link" %>
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -45,13 +45,18 @@
           <%= link_to "アカウント編集", "#", class: "dropdown-item" %>
         </div>
       </li>
-      <li class="nav-link">
-        <% if user_signed_in? %>
-          <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, data: {confirm: 'ログアウトしますか?'} %>
-        <% else %>
-          <%= link_to '新規登録', new_user_registration_path %>
-          <%= link_to 'ログイン', new_user_session_path %>
-        <% end %>
+      <% if user_signed_in? %>
+        <li class="nav-item">
+          <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, data: {confirm: 'ログアウトしますか?'}, class: "nav-link" %>
+        </li>
+      <% else %>
+        <li class="nav-item">
+          <%= link_to '新規登録', new_user_registration_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to 'ログイン', new_user_session_path, class: "nav-link" %>
+        </li>
+      <% end %>
       </li>
     </ul>
   </div>
