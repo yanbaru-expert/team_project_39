@@ -1,15 +1,20 @@
 require 'csv'
-header_option = {headers: true}
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 
+header_option = {headers: true}
 EMAIL = 'test@example.com'
 PASSWORD = 'password'
+ADMIN_EMAIL = 'admin@example.com'
 
 # テストユーザーが存在しないときだけ作成
 User.find_or_create_by!(email: EMAIL) do |user|
   user.password = PASSWORD
   puts 'ユーザーの初期データインポートに成功しました。'
+end
+
+#管理者が存在しない時だけ新規作成 
+AdminUser.find_or_create_by!(email: ADMIN_EMAIL) do |admin_user|
+   admin_user.password = PASSWORD
+   puts '管理者の初期データインポートに成功しました。'
 end
 
 # テキストモデルのデータをインポート
