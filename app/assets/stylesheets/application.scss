@@ -26,6 +26,15 @@
   max-width: 1200px;
 }
 
+body {
+  padding-top: 56px;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  font-size: 0.8rem;
+  color: #fff;
+}
+
 .alert-notice {
   @extend .alert-success;
 }
