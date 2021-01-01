@@ -42,3 +42,14 @@ body {
 .alert-alert {
   @extend .alert-danger;
 }
+
+
+// テキスト・動画一覧系画面共通
+.card-list-wrapper{
+  margin-top: 60px;
+}
+
+// 動画教材一覧画面
+.movie-card-body{
+  height: 200px;
+}
