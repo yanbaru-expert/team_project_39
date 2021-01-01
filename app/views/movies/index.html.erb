@@ -1,0 +1,15 @@
+<div class="conatiner card-list-wrapper">
+  <div class="row">
+    <% @movies.each.with_index(1) do |movie, index| %>
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="card mt-3">
+          <iframe src= <%= movie.url %> frameborder="0" height="250"></iframe>
+          <div class="card-body movie-card-body">
+            <p><button href="#" class="btn btn-secondary btn-block">視聴済みにする</button></p>
+            <p class="card-title">Lv<%= index %>：<%= movie.title %></p>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
