@@ -59,7 +59,7 @@ body {
 }
 
 .card-style {
-  width: 375px;
+  max-width: 375px;
+  margin: 0 auto 68px auto;
   height: 370px;
-  margin-bottom: 68px;
 }
