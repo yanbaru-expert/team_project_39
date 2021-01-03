@@ -1,3 +1,22 @@
-<h1>Texts#index</h1>
-<p>Find me in app/views/texts/index.html.erb</p>
-<button type="button" class="btn btn-primary">Primary</button>
+<div class="container">
+  <div class="row">
+    <div class="col-12 text-center">
+      <h3 class="text-title">テキスト教材</h3>
+    </div>
+  </div>
+
+  <div class="row">
+  <% @texts.each do |text| %>
+    <div class="col-12 col-md-6 col-lg-4">
+      <div class="card card-style">
+        <svg class="bd-placeholder-img card-img-top w-100" height="180" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Image cap"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"/><text x="50%" y="50%" fill="#dee2e6" dy=".3em">Image cap</text></svg>
+        <div class="card-body">
+          <a href="#" class="btn btn-secondary w-100">視聴済みにする</a>
+          <p class="card-text"><%= text.content %></p>
+          <p class="card-title">【<%= text.title %>】</p>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
