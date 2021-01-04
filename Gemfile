@@ -22,6 +22,12 @@ gem "devise-i18n"
 # アクティブアドミン
 gem "activeadmin"
 
+# markdown
+gem 'redcarpet'
+
+# シンタックスハイライト
+gem 'coderay'
+
 # デバックツール
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
