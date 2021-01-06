@@ -23,8 +23,10 @@ module YanbaruCodeCloneApp
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.0
+    #タイムゾーン変更
     config.i18n.default_locale = :ja
     config.time_zone = 'Asia/Tokyo'
+    
     config.generators do |g|
       g.asset false
       g.skip_routes false
