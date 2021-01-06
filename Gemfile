@@ -19,9 +19,13 @@ gem 'devise-bootstrap-views'
 gem "rails-i18n", "~> 6.0"
 gem "devise-i18n"
 
-# アクティブアドミン
-gem "activeadmin"
+# アクティブアドミン（管理者画面）
+gem 'activeadmin'
 
+# ページネーション
+gem 'kaminari'
+
+gem 'ransack'
 # デバックツール
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
