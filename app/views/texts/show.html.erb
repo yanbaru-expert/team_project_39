@@ -1,0 +1,14 @@
+<div class="base-container mw-md">
+  <section>
+    <h2 class="text-title"><%= @text.title %></h2>
+    <div class="movie_info_box">
+      <p>動画教材を試聴された上で、テキスト教材を元に手を動かすようにして下さい。</p>
+    </div>
+    <div class="markdown">
+      <%= markdown(@text.content) %>
+    </div>
+    <div class="raed-text">
+      <a href="#" class="btn btn-secondary btn-block">読破済みにする</a>
+    </div>
+  </section>
+</div>
