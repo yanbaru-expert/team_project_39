@@ -31,6 +31,10 @@ gem 'redcarpet'
 # シンタックスハイライト
 gem 'coderay'
 
+# ページネーション
+gem 'kaminari'
+
+gem 'ransack'
 # デバックツール
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
