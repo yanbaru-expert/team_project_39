@@ -25,6 +25,15 @@ gem 'activeadmin'
 # ページネーション
 gem 'kaminari'
 
+# markdown
+gem 'redcarpet'
+
+# シンタックスハイライト
+gem 'coderay'
+
+# ページネーション
+gem 'kaminari'
+
 gem 'ransack'
 # デバックツール
 group :development, :test do
