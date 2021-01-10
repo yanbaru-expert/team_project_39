@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_09_002909) do
+ActiveRecord::Schema.define(version: 2021_01_09_084211) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -58,6 +58,17 @@ ActiveRecord::Schema.define(version: 2021_01_09_002909) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "text_progresses", force: :cascade do |t|
+    t.boolean "complete_flg", default: false, null: false
+    t.bigint "user_id", null: false
+    t.bigint "text_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["text_id"], name: "index_text_progresses_on_text_id"
+    t.index ["user_id", "text_id"], name: "index_text_progresses_on_user_id_and_text_id", unique: true
+    t.index ["user_id"], name: "index_text_progresses_on_user_id"
+  end
+
   create_table "texts", force: :cascade do |t|
     t.string "genre"
     t.string "title"
@@ -80,4 +91,6 @@ ActiveRecord::Schema.define(version: 2021_01_09_002909) do
 
   add_foreign_key "movie_progresses", "movies"
   add_foreign_key "movie_progresses", "users"
+  add_foreign_key "text_progresses", "texts"
+  add_foreign_key "text_progresses", "users"
 end
