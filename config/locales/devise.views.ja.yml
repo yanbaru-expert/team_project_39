@@ -27,8 +27,11 @@ ja:
         unlock_token: ロック解除用トークン
         updated_at: 更新日
     models:
-      user: ユーザー
-
+        user: ユーザー
+        admin_user: 管理者
+        comment: コメント
+        movie: ムービー
+        text: テキスト
   devise:
     confirmations:
       confirmed: メールアドレスが確認できました。
