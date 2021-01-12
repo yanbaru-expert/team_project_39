@@ -5,7 +5,7 @@
         <div class="card mt-3">
           <iframe src= <%= movie.url %> frameborder="0" height="250"></iframe>
           <div class="card-body movie-card-body">
-            <p><button href="#" class="btn btn-secondary btn-block">視聴済みにする</button></p>
+            <p><%= button_tag "視聴済みにする", type: 'button', class: "btn btn-secondary btn-block" %></p>
             <p class="card-title">Lv<%= index %>：<%= movie.title %></p>          
           </div>
         </div>
@@ -15,4 +15,3 @@
 </div>
 
 <%= paginate @movies%>
-
