@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_09_084211) do
+ActiveRecord::Schema.define(version: 2021_01_15_140224) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,7 +44,6 @@ ActiveRecord::Schema.define(version: 2021_01_09_084211) do
   create_table "movie_progresses", force: :cascade do |t|
     t.bigint "user_id", null: false, comment: "ユーザーID"
     t.bigint "movie_id", null: false, comment: "動画ID"
-    t.boolean "complete_flg", default: false, null: false, comment: "進捗ステータス"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id", "movie_id"], name: "index_movie_progresses_on_user_id_and_movie_id", unique: true
