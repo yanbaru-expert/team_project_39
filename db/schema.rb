@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_15_140224) do
+ActiveRecord::Schema.define(version: 2021_01_17_073206) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -58,7 +58,6 @@ ActiveRecord::Schema.define(version: 2021_01_15_140224) do
   end
 
   create_table "text_progresses", force: :cascade do |t|
-    t.boolean "complete_flg", default: false, null: false
     t.bigint "user_id", null: false
     t.bigint "text_id", null: false
     t.datetime "created_at", precision: 6, null: false
