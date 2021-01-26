@@ -3,7 +3,9 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   devise_for :users
   root to: 'texts#index'
-  resources :texts
+  resources :texts do
+    resource :text_progresses, only: %w(create destroy)
+  end
   resources :movies, only:  %w(index) do
     resource :movie_progresses, only: %w(create destroy)
   end
