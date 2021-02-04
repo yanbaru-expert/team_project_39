@@ -4,6 +4,7 @@ header_option = {headers: true}
 EMAIL = 'test@example.com'
 PASSWORD = 'password'
 ADMIN_EMAIL = 'admin@example.com'
+# 管理者パスワードとメールアドレスは変更済み
 
 # テストユーザーが存在しないときだけ作成
 User.find_or_create_by!(email: EMAIL) do |user|
