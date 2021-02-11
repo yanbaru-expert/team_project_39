@@ -1,4 +1,4 @@
-class MovieProgressessController < ApplicationController
+class MovieProgressesController < ApplicationController
   def create
     current_user.movie_progresses.create(movie_id: params[:movie_id])
   end
